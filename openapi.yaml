@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: API
+  description: API for Java Academy
+  version: 1.0.0
+  contact:
+    email: vaibhav@gmail.com
+    name: vaibhav
+paths:
+  /employee:
+    get:
+      description: To search employee
+      responses:
+        "200":
+          description : 200 response
+         
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/employee"
+    post:
+      description: To Add employee
+      requestBody:
+        description: structure of employee
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/employee"
+      responses:
+        "200":
+          description: 200 response
+
+components:
+  schemas:
+    employee:
+      type: object
+      properties:
+        name:
+          type: string
+        department:
+          type: string
+        empId:
+          type: integer

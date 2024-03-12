@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "36bb5f63-8e7b-4884-8c81-aac2da1757df",
+		"name": "user operations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30852250"
+	},
+	"item": [
+		{
+			"name": "by month",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "user create",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"    <table>\r",
+							"        <tr bgcolor=\"#50a9f2\">\r",
+							"            <th>Time</th>\r",
+							"            <th>Thread</th>\r",
+							"            <th>Priority</th>\r",
+							"            <th>Error Code</th>\r",
+							"            <th>Sub System</th>\r",
+							"            <th>Message</th>\r",
+							"        </tr>\r",
+							"\r",
+							"        {{#each response}}\r",
+							"            <tr>\r",
+							"                <td>{{time}}</td>\r",
+							"                <td>{{thread}}</td>\r",
+							"                <td>{{priority}}</td>\r",
+							"                <td>{{err_code}}</td>\r",
+							"                <td>{{subsystem}}</td>\r",
+							"                <td>{{message}}</td>\r",
+							"            </tr>\r",
+							"        {{/each}}\r",
+							"    </table>\r",
+							"`;\r",
+							"pm.visualizer.set(template, {\r",
+							"    response: pm.response.json()\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1010/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1010",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "visualization of get All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"    <table>\r",
+							"        <tr bgcolor=\"#50a9f2\">\r",
+							"            <th>Time</th>\r",
+							"            <th>Thread</th>\r",
+							"            <th>Priority</th>\r",
+							"            <th>Error Code</th>\r",
+							"            <th>Sub System</th>\r",
+							"            <th>Message</th>\r",
+							"        </tr>\r",
+							"\r",
+							"        {{#each response}}\r",
+							"            <tr>\r",
+							"                <td>{{time}}</td>\r",
+							"                <td>{{thread}}</td>\r",
+							"                <td>{{priority}}</td>\r",
+							"                <td>{{err_code}}</td>\r",
+							"                <td>{{subsystem}}</td>\r",
+							"                <td>{{message}}</td>\r",
+							"            </tr>\r",
+							"        {{/each}}\r",
+							"    </table>\r",
+							"`;\r",
+							"pm.visualizer.set(template, {\r",
+							"    response: pm.response.json()\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1010/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1010",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Taste cases get user by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
